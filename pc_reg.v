@@ -1,4 +1,5 @@
-module pc_reg ( input wire clk, input wire rst, output reg [5:0] pc, output reg ce);
+`include "defs.v"
+module pc_reg ( input wire clk, input wire rst, output reg [`InstaddrBus] pc, output reg ce);
 
 always @(posedge clk)
 begin
@@ -17,7 +18,7 @@ always @(posedge clk)
 begin
 	if(ce==1'b0)
 	begin
-		pc <= 6'h00;
+		pc <= 32'h0;
 	end
 	else if(ce==1'b1)
 	begin
