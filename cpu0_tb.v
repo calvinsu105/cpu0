@@ -1,8 +1,7 @@
 module cpu0_tb;
 reg CLOCK;
 reg rst;
-wire [31:0]  inst;
-wire [31:0]  pc;
+
 
 // block clock register and start the clock
 
@@ -25,7 +24,10 @@ end
 
 // test module
 
-core_top core_top( .clk(CLOCK), .rst(rst), .if_id_inst_o(inst), .if_id_inst_pc(pc) );
+SOPC cpu_rv32i( .clk(CLOCK), .rst(rst));
+
+//core_top core_top( .clk(CLOCK), .rst(rst), .if_id_inst_o(inst), .if_id_inst_pc(pc) );
+//rom rom0( .addr(inst_pc), .ce(rom_ce0), .inst(inst_o));
 
 initial begin
 	$dumpfile("cpu0_tb.vcd");

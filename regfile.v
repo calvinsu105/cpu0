@@ -11,7 +11,7 @@ module regfile #(
     input [RSLEN-1:0] rsb_a,
     /*寫暫存器rd*/
     input [`IntSize] wb_data,
-    input [RSLEN-1:0] w_baddr,
+    input [RSLEN-1:0] wb_addr,
     input wb_e,
     /*輸出data1 2*/
     output [`IntSize] rsa_o,

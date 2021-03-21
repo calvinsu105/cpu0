@@ -22,7 +22,7 @@ begin
 	end
 	else if(ce==1'b1)
 	begin
-		pc = pc + 1'b1;
+		pc = pc + 4'h4;
 	end
 
 end
